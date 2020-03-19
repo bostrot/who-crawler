@@ -7,7 +7,7 @@ cache:
   - node_modules/
 
 install_packages:
-  stage: install
+  stage: build
   script:
     - npm prune
     - npm install
