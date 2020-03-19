@@ -8,7 +8,7 @@ install_packages:
   stage: install
   script:
     - npm prune
-    - npm install node-fetch jsdom puppeteer @tryghost/admin-api
+    - npm install
   cache:
     key: ${CI_BUILD_REF_NAME}
     paths:
