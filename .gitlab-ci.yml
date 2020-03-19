@@ -3,24 +3,13 @@ image: node:13.10.1
 stages:
   - install
   - deploy
+  
+before_script:
+  - npm install
 
-install_packages:
-  stage: install
-  script:
-    - npm prune
-    - npm install
-  cache:
-    key: ${CI_BUILD_REF_NAME}
-    paths:
-      - node_modules/
-  artifacts:
-    paths:
-      - node_modules/
-  only:
-    refs:
-      - master
-    changes:
-      - package.json
+cache:
+  paths:
+    - node_modules/
 
 run:
   stage: deploy
