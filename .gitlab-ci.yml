@@ -1,0 +1,11 @@
+image: node:13.10.1
+
+pages:
+  stage: deploy
+  script:
+    - node $POST_URL $KEY
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
