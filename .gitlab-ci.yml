@@ -19,7 +19,6 @@ install_packages:
   only:
     refs:
       - master
-      - develop
     changes:
       - package.json
 
@@ -27,6 +26,7 @@ run:
   stage: deploy
   script:
     - ls
+    - npm install
     - echo $POST_URL $KEY
     - node $POST_URL $KEY
   artifacts:
