@@ -115,16 +115,21 @@ const api = new GhostAdminAPI({
               <h2>Latest Report</h2>
               ${latestReport}
               <h2>Sources</h2>
-              https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd
-               - Q&A Coronavirus (last crawled ${date})
-              https://www.who.int/news-room/q-a-detail/q-a-coronaviruses
-               - Q&A Coronavirus (last crawled ${date})
-              https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/
-               - Situation repots (last crawled ${date})
-              https://www.who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen
-               - Events as they happen (last crawled ${date})
+              <a href="https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd">
+              https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd</a>
+               - Q&A Coronavirus (last crawled ${date})</a>
+              <a href="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses"> 
+              https://www.who.int/news-room/q-a-detail/q-a-coronaviruses</a>
+               - Q&A Coronavirus (last crawled ${date})</a>
+              <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/">
+              https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/</a>
+               - Situation repots (last crawled ${date})</a>
+              <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen">
+              https://www.who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen</a>
+               - Events as they happen (last crawled ${date})</a>
 
-              https://gitlab.com/botty-group/who-crawler - WHO Crawler
+              <a href="https://gitlab.com/botty-group/who-crawler">
+              https://gitlab.com/botty-group/who-crawler</a> - WHO Crawler
               `;
                           api.posts.browse({
                             filter: 'tag:corona',

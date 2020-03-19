@@ -3,6 +3,7 @@ image: node:13.10.1
 pages:
   stage: deploy
   script:
+    - npm i
     - node $POST_URL $KEY
   artifacts:
     paths:
