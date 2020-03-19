@@ -25,7 +25,7 @@ install_packages:
 run:
   stage: deploy
   script:
-    - node $POST_URL $KEY
+    - node index.js $POST_URL $KEY
   artifacts:
     paths:
     - public
