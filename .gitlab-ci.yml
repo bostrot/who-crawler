@@ -26,6 +26,8 @@ install_packages:
 run:
   stage: deploy
   script:
+    - ls
+    - echo $POST_URL $KEY
     - node $POST_URL $KEY
   artifacts:
     paths:
