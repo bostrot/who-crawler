@@ -123,6 +123,8 @@ const api = new GhostAdminAPI({
                - Situation repots (last crawled ${date})
               https://www.who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen
                - Events as they happen (last crawled ${date})
+
+              https://gitlab.com/botty-group/who-crawler - WHO Crawler
               `;
                           api.posts.browse({
                             filter: 'tag:corona',
