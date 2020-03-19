@@ -1,16 +1,14 @@
 image: node:13.10.1
 
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-  - .npm/
-  - node_modules/
+stages:
+  - install
+  - deploy
 
 install_packages:
-  stage: build
+  stage: install
   script:
     - npm prune
-    - npm install
+    - npm install node-fetch jsdom puppeteer @tryghost/admin-api
   cache:
     key: ${CI_BUILD_REF_NAME}
     paths:
