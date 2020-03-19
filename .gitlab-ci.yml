@@ -6,10 +6,28 @@ cache:
   - .npm/
   - node_modules/
 
-pages:
+install_packages:
+  stage: install
+  script:
+    - npm prune
+    - npm install
+  cache:
+    key: ${CI_BUILD_REF_NAME}
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - node_modules/
+  only:
+    refs:
+      - master
+      - develop
+    changes:
+      - package.json
+
+run:
   stage: deploy
   script:
-    - npm i
     - node $POST_URL $KEY
   artifacts:
     paths:
