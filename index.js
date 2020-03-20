@@ -102,9 +102,9 @@ const api = new GhostAdminAPI({
                           const date = new Date();
                           const content = `
               <p>
-              This is a corona live feed that is updated every 15 minutes with
-              a web crawler from the official WHO website with the latest news 
-              and information. 
+              This is a corona live feed that is updated every 15 minutes` +
+              ` with a web crawler from the official WHO website with the` +
+              ` latest news and information. 
               </p>
               <h2>Latest Update</h2>
               ${latestNews}
@@ -128,8 +128,8 @@ const api = new GhostAdminAPI({
               `https://www.who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen</a>` +
               ` - Events as they happen (last crawled ${date})</a><br />
 
-              <a href="https://gitlab.com/botty-group/who-crawler">
-              https://gitlab.com/botty-group/who-crawler</a> - WHO Crawler
+              <a href="https://gitlab.com/botty-group/who-crawler">` +
+              `https://gitlab.com/botty-group/who-crawler</a> - WHO Crawler
               `;
                           api.posts.browse({
                             filter: 'tag:corona',
