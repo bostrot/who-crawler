@@ -144,11 +144,14 @@ const api = new GhostAdminAPI({
                                   }, {
                                     source: 'html',
                                   })
-                                      .catch((err) => console.log(err));
+                                      .catch((err) => {
+                                        throw new Error(err);
+                                      },
+                                      );
                                 });
                               })
                               .catch((err) => {
-                                console.error(err);
+                                throw new Error(err);
                               });
                         });
                   });
