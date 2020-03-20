@@ -99,7 +99,7 @@ const api = new GhostAdminAPI({
                           const doc = dom.window.document;
                           const latestNews = doc.querySelector('.col-md-8 > '+
                           '.sf-content-block.content-block > div').textContent;
-                          const date = new Date(); a;
+                          const date = new Date();
                           const content = `
               <p>
               This is a corona live feed that is updated every 15 minutes with
