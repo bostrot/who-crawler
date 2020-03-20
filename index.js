@@ -104,7 +104,7 @@ const api = new GhostAdminAPI({
                           const date = new Date();
                           const content = `
               <p>
-              This is a corona live feed that is updated every 15 minutes` +
+              This is a corona live feed that is updated hourly` +
               ` with a web crawler from the official WHO website with the` +
               ` latest news and information.
               </p>
