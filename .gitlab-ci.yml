@@ -15,8 +15,6 @@ run:
   stage: deploy
   script:
     - node index.js $POST_URL $KEY
-    - pwd
-    - ls
   artifacts:
     paths:
     - public
