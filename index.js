@@ -39,7 +39,7 @@ const api = new GhostAdminAPI({
   });
 
   await page.screenshot({
-    path: '/builds/botty-group/who-crawler/map.png',
+    path: 'map.png',
     fullPage: 'true',
   });
 
@@ -47,12 +47,13 @@ const api = new GhostAdminAPI({
 
   const imageUpload = api.images.upload({
     ref: 'Corona_Map',
-    file: '/builds/botty-group/who-crawler/map.png',
+    file: 'map.png',
   });
 
   Promise
       .resolve(imageUpload)
       .then((image) => {
+        console.log('Image URL: ' + image.url);
         const clean = function(text) {
           return text.replace(/  /g, '').replace(/\n/g, '');
         };
