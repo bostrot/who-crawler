@@ -115,21 +115,20 @@ const api = new GhostAdminAPI({
               <h2>Latest Report</h2>
               ${latestReport}
               <h2>Sources</h2>
-              <a href="https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd">` +
+              Map, <a href="https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd">` +
               `https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd</a>` +
-              ` - Q&A Coronavirus (last crawled ${date})</a><br />
-              <a href="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses">` +
+              ` (last crawled ${date})</a><br /><br />` +
+              `Q&A Coronavirus, <a href="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses">` +
               `https://www.who.int/news-room/q-a-detail/q-a-coronaviruses</a>` +
-              ` - Q&A Coronavirus (last crawled ${date})</a><br />
-              <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/">` +
+              ` (last crawled ${date})</a><br /><br />` +
+              `Situation repots, <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/">` +
               `https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/</a>` +
-              ` - Situation repots (last crawled ${date})</a><br />
-              <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen">` +
+              ` (last crawled ${date})</a><br /><br />` +
+              `Events as they happen, <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen">` +
               `https://www.who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen</a>` +
-              ` - Events as they happen (last crawled ${date})</a><br />
-
-              <a href="https://gitlab.com/botty-group/who-crawler">` +
-              `https://gitlab.com/botty-group/who-crawler</a> - WHO Crawler
+              ` (last crawled ${date})</a><br /><br />` +
+              `WHO Crawler, <a href="https://gitlab.com/botty-group/who-crawler">` +
+              `https://gitlab.com/botty-group/who-crawler</a>
               `;
                           api.posts.browse({
                             filter: 'tag:corona',
