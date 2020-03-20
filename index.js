@@ -1,15 +1,17 @@
 const fetch = require('node-fetch');
 const jsdom = require('jsdom');
+const imgur = require('imgur');
 const {
   JSDOM,
 } = jsdom;
 const puppeteer = require('puppeteer');
 const GhostAdminAPI = require('@tryghost/admin-api');
 
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+// process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
 const url = process.argv[2];
 const key = process.argv[3];
+const imgur_key = process.argv[4];
 
 const api = new GhostAdminAPI({
   url,
@@ -45,18 +47,17 @@ const api = new GhostAdminAPI({
 
   await browser.close();
 
-  const imageUpload = api.images.upload({
-    ref: 'Corona_Map',
-    file: 'map.png',
-  });
-
-  Promise
-      .resolve(imageUpload)
-      .then((image) => {
-        console.log('Image URL: ' + image.url);
+  // uploading image to imgur
+  imgur.setClientId(imgur_key);
+  imgur.getClientId();
+  imgur.loadClientId('.imgur')
+      .then(imgur.setClientId);
+  imgur.uploadFile('map.png')
+      .then(function(json) {
         const clean = function(text) {
           return text.replace(/  /g, '').replace(/\n/g, '');
         };
+
         // fetch faq
         fetch('https://www.who.int/news-room/q-a-detail/q-a-coronaviruses')
             .then((res) => res.text())
@@ -105,12 +106,12 @@ const api = new GhostAdminAPI({
               <p>
               This is a corona live feed that is updated every 15 minutes` +
               ` with a web crawler from the official WHO website with the` +
-              ` latest news and information. 
+              ` latest news and information.
               </p>
               <h2>Latest Update</h2>
               ${latestNews}
               <h2>Current Spread Map</h2>
-              <img src="${image.url}"></img>
+              <img src="${json.data.link}"></img>
               <h2>Current FAQ</h2>
               ${faq}
               <h2>Latest Report</h2>
@@ -156,5 +157,8 @@ const api = new GhostAdminAPI({
                         });
                   });
             });
+      })
+      .catch(function(err) {
+        throw new Error(err.message);
       });
 })();
