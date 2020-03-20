@@ -22,3 +22,4 @@ run:
     - public
   only:
   - master
+  tags: [x64]
