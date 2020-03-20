@@ -14,7 +14,7 @@ cache:
 run:
   stage: deploy
   script:
-    - node index.js $POST_URL $KEY
+    - node index.js $POST_URL $KEY $IMGUR
     - pwd
     - ls
   artifacts:
