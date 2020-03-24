@@ -35,8 +35,7 @@ const api = new GhostAdminAPI({
     deviceScaleFactor: 1,
   };
   await page.setViewport(VIEWPORT);
-  await page.goto('https://experience.arcgis.com/experience/' +
-  '685d0ace521648f8a5beeeee1b9125cd', {
+  await page.goto('https://www.who.int/redirect-pages/page/novel-coronavirus-(covid-19)-situation-dashboard', {
     waitUntil: ['load', 'networkidle0', 'networkidle2'],
   });
 
