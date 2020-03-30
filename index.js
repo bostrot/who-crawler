@@ -69,9 +69,9 @@ const api = new GhostAdminAPI({
               for (let i = 0; i < doc.querySelectorAll(
                   '.sf-accordion__link').length; i++) {
                 faqTopics[i] = clean(doc.querySelectorAll(
-                    '.sf-accordion__link')[i].textContent);
+                    '.sf-accordion__link')[i].innerHTML);
                 faqContent[i] = clean(doc.querySelectorAll(
-                    '.sf-accordion__content')[i].textContent);
+                    '.sf-accordion__content')[i].innerHTML);
                 faq += '<h3>' + faqTopics[i] + '</h3><p>' + faqContent[i] +
                 '</p>';
               }
