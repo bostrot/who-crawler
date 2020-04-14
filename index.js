@@ -38,7 +38,6 @@ const api = new GhostAdminAPI({
   await page.goto('https://www.who.int/redirect-pages/page/novel-coronavirus-(covid-19)-situation-dashboard', {
     waitUntil: ['load', 'networkidle0', 'networkidle2'],
   });
-  let map = '<iframe src="https://covid19.who.int/" width="100%" height="500" frameborder="0"></iframe>'
 /*
   await page.screenshot({
     path: 'map.png',
@@ -111,7 +110,7 @@ const api = new GhostAdminAPI({
               <h2>Latest Update</h2>
               ${latestNews}
               <h2>Current Spread Map</h2>
-              ${map}
+              <iframe src="https://covid19.who.int/" width="100%" height="500" frameborder="0"></iframe>
               <h2>Current FAQ</h2>
               ${faq}
               <h2>Latest Report</h2>
