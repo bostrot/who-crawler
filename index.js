@@ -109,7 +109,7 @@ const api = new GhostAdminAPI({
               </p>
               <h2>Latest Update</h2>
               ${latestNews}
-              <h2>Current Spread Map</h2>
+              <h2>Current Spread Info</h2>
               <iframe src="https://covid19.who.int/" width="100%" height="500" frameborder="0"></iframe>
               <h2>Current FAQ</h2>
               ${faq}
