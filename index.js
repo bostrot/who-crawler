@@ -55,10 +55,10 @@ const api = new GhostAdminAPI({
   imgur.loadClientId('.imgur')
       .then(imgur.setClientId);
   imgur.uploadFile('map.png')
-      .then(function(json) {
+      .then(function(json) {*/
         const clean = function(text) {
           return text.replace(/  /g, '').replace(/\n/g, '');
-        };*/
+        };
 
         // fetch faq
         fetch('https://www.who.int/news-room/q-a-detail/q-a-coronaviruses')
