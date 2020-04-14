@@ -38,14 +38,17 @@ const api = new GhostAdminAPI({
   await page.goto('https://www.who.int/redirect-pages/page/novel-coronavirus-(covid-19)-situation-dashboard', {
     waitUntil: ['load', 'networkidle0', 'networkidle2'],
   });
-
+  let map = await page.$eval('.leaflet-container', (element) => {
+    return element.innerHTML
+  })
+/*
   await page.screenshot({
     path: 'map.png',
     fullPage: 'true',
   });
-
+*/
   await browser.close();
-
+/*
   // uploading image to imgur
   imgur.setClientId(imgur_key);
   imgur.getClientId();
@@ -55,7 +58,7 @@ const api = new GhostAdminAPI({
       .then(function(json) {
         const clean = function(text) {
           return text.replace(/  /g, '').replace(/\n/g, '');
-        };
+        };*/
 
         // fetch faq
         fetch('https://www.who.int/news-room/q-a-detail/q-a-coronaviruses')
@@ -110,7 +113,7 @@ const api = new GhostAdminAPI({
               <h2>Latest Update</h2>
               ${latestNews}
               <h2>Current Spread Map</h2>
-              <img src="${json.data.link}"></img>
+              ${map}
               <h2>Current FAQ</h2>
               ${faq}
               <h2>Latest Report</h2>
@@ -156,8 +159,8 @@ const api = new GhostAdminAPI({
                         });
                   });
             });
-      })
+     /* })
       .catch(function(err) {
         throw new Error(err.message);
-      });
+      });*/
 })();
