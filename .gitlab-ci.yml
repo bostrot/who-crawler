@@ -32,4 +32,4 @@ run:
     - public
   only:
   - master
-  tags: [x64]
+  tags: [docker]
