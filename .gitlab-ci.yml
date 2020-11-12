@@ -34,7 +34,7 @@ run:
   - master
   tags: [docker]
 
-  trigger_build: 
-    stage: deploy
-    script:
-      - "curl -X POST -F token=TOKEN -F ref=REF_NAME https://gitlab.com/api/v4/projects/17545292/trigger/pipeline"
+trigger_build: 
+  stage: deploy
+  script:
+    - "curl -X POST -F token=TOKEN -F ref=REF_NAME https://gitlab.com/api/v4/projects/17545292/trigger/pipeline"
