@@ -140,6 +140,7 @@ const api = new GhostAdminAPI({
                                   api.posts.edit({
                                     id: post.id,
                                     updated_at: post.updated_at,
+                                    created_at: post.updated_at,
                                     html: content,
                                   }, {
                                     source: 'html',
