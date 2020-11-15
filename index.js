@@ -29,9 +29,9 @@ const api = new GhostAdminAPI({
     ],
   } );
   const page = await browser.newPage();
-  const VIEWPORT = {
-    width: 512,
-    height: 512,
+  const VIEWPORT = {    
+    width: 1440,
+    height: 900,
     deviceScaleFactor: 1,
   };
   await page.setViewport(VIEWPORT);
@@ -75,6 +75,7 @@ const api = new GhostAdminAPI({
                 faq += '<h3>' + faqTopics[i] + '</h3><p>' + faqContent[i] +
                 '</p>';
               }
+              faq.replaceAll('href="', 'href="https://www.who.int/');
               // latest situation report
               fetch('https://www.who.int/emergencies/diseases/' +
               'novel-coronavirus-2019/situation-reports/')
@@ -99,7 +100,7 @@ const api = new GhostAdminAPI({
                           const dom = new JSDOM(body);
                           const doc = dom.window.document;
                           const latestNews = doc.querySelector('.col-md-8 > '+
-                          '.sf-content-block.content-block > div').textContent.replaceAll('href="', 'href="https://www.who.int/');
+                          '.sf-content-block.content-block > div').textContent;
                           const date = new Date();
                           const content = `
               <p>
