@@ -31,7 +31,7 @@ const api = new GhostAdminAPI({
   const page = await browser.newPage();
   const VIEWPORT = {
     width: 1440,
-    height: 900,
+    height: 1440,
     deviceScaleFactor: 1,
   };
   await page.setViewport(VIEWPORT);
@@ -99,7 +99,7 @@ const api = new GhostAdminAPI({
                           const dom = new JSDOM(body);
                           const doc = dom.window.document;
                           const latestNews = doc.querySelector('.col-md-8 > '+
-                          '.sf-content-block.content-block > div').textContent;
+                          '.sf-content-block.content-block > div').textContent.replaceAll('href="', 'href="https://www.who.int');
                           const date = new Date();
                           const content = `
               <p>
