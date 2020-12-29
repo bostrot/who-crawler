@@ -32,7 +32,8 @@ const api = new GhostAdminAPI({
   const page = await browser.newPage();
   const VIEWPORT = {
     width: 1366, 
-    height: 768
+    height: 768,
+    isLandscape: true,
   };
   
   await page.setViewport(VIEWPORT);
@@ -42,7 +43,7 @@ const api = new GhostAdminAPI({
 
   await page.screenshot({
     path: 'map.png',
-    fullPage: 'false',
+    //fullPage: 'false',
   });
 
   await browser.close();
