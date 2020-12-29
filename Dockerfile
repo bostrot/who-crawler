@@ -9,4 +9,4 @@ RUN apt-get update -y && \
     apt-get install -y libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 && \
     apt-get install -y libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 && \
     apt-get install -y libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 && \
-    apt-get install -y libnss3 lsb-release xdg-utils wget
+    apt-get install -y libnss3 lsb-release xdg-utils wget && apt-get install -y chromium
