@@ -42,7 +42,7 @@ const api = new GhostAdminAPI({
 
   await page.screenshot({
     path: 'map.png',
-    fullPage: 'true',
+    fullPage: 'false',
   });
 
   await browser.close();
