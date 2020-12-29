@@ -1,11 +1,11 @@
 image: bostrot/who-crawler-dependencies:latest
 
-#stages:
-#  - install
-#  - deploy
+stages:
+  - install
+  - deploy
   
-#before_script:
-#  - npm install
+before_script:
+  - npm install
 
 cache:
   paths:
