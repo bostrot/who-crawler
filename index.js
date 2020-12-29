@@ -30,11 +30,11 @@ const api = new GhostAdminAPI({
     ],
   } );
   const page = await browser.newPage();
-  const VIEWPORT = {    
-    width: 800,
-    height: 900,
-    deviceScaleFactor: 1,
+  const VIEWPORT = {
+    width: 1366, 
+    height: 768
   };
+  
   await page.setViewport(VIEWPORT);
   await page.goto('https://www.who.int/redirect-pages/page/novel-coronavirus-(covid-19)-situation-dashboard', {
     waitUntil: ['load', 'networkidle0', 'networkidle2'],
