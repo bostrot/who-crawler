@@ -1,4 +1,4 @@
-image: satantime/puppeteer-node:15-slim
+image: bostrot/who-crawler-dependencies:latest
 
 stages:
   - install
