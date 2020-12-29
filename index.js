@@ -21,6 +21,7 @@ const api = new GhostAdminAPI({
 
 (async () => {
   const browser = await puppeteer.launch({
+    executablePath: '/usr/bin/chromium-browser',
     args: [
       '--incognito',
       '--single-process',
