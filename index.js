@@ -32,7 +32,7 @@ const api = new GhostAdminAPI({
   const page = await browser.newPage();
   const VIEWPORT = {    
     width: 1200,
-    height: 500,
+    height: 1000,
     deviceScaleFactor: 1,
   };
   await page.setViewport(VIEWPORT);
