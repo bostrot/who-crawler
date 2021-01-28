@@ -12,7 +12,9 @@ dependencies:
   variables:
     DOCKER_TLS_CERTDIR: ""
   script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
     - docker build -t bostrot/who-crawler-dependencies:latest . --cache-from bostrot/who-crawler-dependencies:latest
+    - docker push bostrot/who-crawler-dependencies:latest
   only:
   - master
   tags: [docker]
