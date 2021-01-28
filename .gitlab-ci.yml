@@ -12,7 +12,7 @@ dependencies:
   variables:
     DOCKER_TLS_CERTDIR: ""
   script:
-    - docker build -t bostrot/who-crawler-dependencies .
+    - docker build -t bostrot/who-crawler-dependencies:latest . --cache-from bostrot/who-crawler-dependencies:latest
   only:
   - master
   tags: [docker]
